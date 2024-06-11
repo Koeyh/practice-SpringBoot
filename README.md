@@ -4,3 +4,11 @@
   - JPA -> mybatis
   - JSP -> Thymeleaf
   - Oracle -> MySQL
+
+#### 1일차
+- insert 문을 이용한 데이터 삽입
+- save()
+
+#### 2일차
+- select 문을 이용한 데이터 조회
+- findAll()
