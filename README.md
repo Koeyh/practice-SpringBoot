@@ -29,4 +29,4 @@ const listReq = () => {
   location.href = "/list";
 }
 ```
-- <a>태그나, <action> 태그의 링크 설정은 이전에 경험 했으니, JS로 설정
+- a태그나, action태그의 링크 설정은 이전에 경험 했으니, JS로 설정
