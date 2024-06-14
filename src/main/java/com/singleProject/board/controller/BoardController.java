@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.io.IOException;
 import java.util.List;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 @RequiredArgsConstructor
@@ -47,7 +49,7 @@ public class BoardController {
         model.addAttribute("board", boardDto);
         return "detail";
     }
-
+    // 기존에 작성된 데이터 불러오기
     @GetMapping("update/{id}")
     public String update(@PathVariable("id") Long id, Model model) {
         BoardDto boardDto = boardService.findById(id);
@@ -62,4 +64,11 @@ public class BoardController {
         model.addAttribute("board", dto);
         return "detail";
     }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable("id") Long id) {
+        boardService.delete(id);
+        return "redirect:/list";
+    }
+    
 }

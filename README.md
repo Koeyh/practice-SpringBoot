@@ -6,6 +6,12 @@
   - Oracle -> MySQL
 - CSS Style 요소는 최소한으로
 - mybatis와 thymeleaf, javascript 사용과 숙달에 집중 할 것
+- 처음에는 개발환경을 IntelliJ IDEA로 설정하였으나, Spring Boot 자체는 Visual Studio Code가 더욱 편리하다 느껴 변경('24. 6. 15. 기준)
+
+### 개발 환경
+- IDE : IntelliJ => visual studio Code
+- Spring Boot 3.2.6 ver (3.3.0 ver은 MyBatis 지원 불가)
+- MySQL 사용
 
 - 패키지별 개념 잡기
   
