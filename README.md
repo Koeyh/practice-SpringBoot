@@ -7,6 +7,15 @@
 - CSS Style 요소는 최소한으로
 - mybatis와 thymeleaf, javascript 사용과 숙달에 집중 할 것
 
+- 패키지별 개념 잡기
+|패키지명|용도|
+|:---:|:---|
+|Controller|View와 Service를 이어주는 역할|
+|Service|실질적인 로직을 실행하여 Model단으로 전달|
+|Repository|Service에서 전달받은 내용으로 xml 파일에 전달|
+|/resources/mapper|실제 쿼리를 작성하는 곳|
+|dto|DB의 컬럼과 Java 클래스의 필드를 매핑시키기 위함|
+
 #### 1일차
 - insert 문을 이용한 데이터 삽입
 - save()
@@ -30,3 +39,5 @@ const listReq = () => {
 }
 ```
 - a태그나, action태그의 링크 설정은 이전에 경험 했으니, JS로 설정
+
+#### 4일차
