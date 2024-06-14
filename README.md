@@ -13,7 +13,8 @@
 - Spring Boot 3.2.6 ver (3.3.0 ver은 MyBatis 지원 불가)
 - MySQL 사용
 
-- 패키지별 개념 잡기
+
+### 패키지별 개념 잡기
   
 |패키지명|역할|
 |:---:|:---|
@@ -22,6 +23,7 @@
 |Repository|Service에서 전달받은 내용으로 xml 파일에 전달|
 |/resources/mapper|실제 쿼리를 작성하는 곳|
 |dto|DB의 컬럼과 Java 클래스의 필드를 매핑시키기 위함|
+<hr>
 
 #### 1일차
 - insert 문을 이용한 데이터 삽입
