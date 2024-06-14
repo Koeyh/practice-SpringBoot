@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.io.IOException;
 import java.util.List;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 @RequiredArgsConstructor
@@ -47,4 +49,19 @@ public class BoardController {
         model.addAttribute("board", boardDto);
         return "detail";
     }
+
+    @GetMapping("/update/{id}")
+    public String update(@PathVariable("id") Long id, Model model) {
+        boardService.findById(id);
+        
+        return "";
+    }
+    
+
+    // @GetMapping("/{id}}")
+    // public String deleteBoard (@PathVariable("id") Long id) {
+    //     boardService.deleteBoard(id);
+    //     return "detail";
+    // }
+    
 }

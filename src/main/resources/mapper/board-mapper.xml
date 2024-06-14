@@ -19,4 +19,5 @@
                date_format(createdAt, "%Y-%m-%d %H:%i:%s") as createdAt
         from board_table where id=#{id}
     </select>
+    
 </mapper>
