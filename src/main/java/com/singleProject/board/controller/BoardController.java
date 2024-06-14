@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.io.IOException;
 import java.util.List;
-import org.springframework.web.bind.annotation.RequestParam;
-
 
 @Controller
 @RequiredArgsConstructor
@@ -28,7 +26,7 @@ public class BoardController {
     public String save(BoardDto boardDto) throws IOException {
         System.out.println("BoardDto: " + boardDto);
         boardService.save(boardDto);
-        return "index";
+        return "redirect:/list";
     }
 
     // DB 데이터 가져오기
@@ -50,18 +48,18 @@ public class BoardController {
         return "detail";
     }
 
-    @GetMapping("/update/{id}")
+    @GetMapping("update/{id}")
     public String update(@PathVariable("id") Long id, Model model) {
-        boardService.findById(id);
-        
-        return "";
+        BoardDto boardDto = boardService.findById(id);
+        model.addAttribute("board", boardDto);
+        return "update";
     }
-    
 
-    // @GetMapping("/{id}}")
-    // public String deleteBoard (@PathVariable("id") Long id) {
-    //     boardService.deleteBoard(id);
-    //     return "detail";
-    // }
-    
+    @PostMapping("/update/{id}")
+    public String update(BoardDto boardDto, Model model) {
+        boardService.update(boardDto);
+        BoardDto dto = boardService.findById(boardDto.getId());
+        model.addAttribute("board", dto);
+        return "detail";
+    }
 }

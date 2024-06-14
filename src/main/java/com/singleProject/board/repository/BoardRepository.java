@@ -30,8 +30,7 @@ public class BoardRepository {
         return sql.selectOne("Board.findById", id);
     }
 
-    // public void deleteBoard(Long id) {
-    //     sql.delete("Board.deleteBoard", id);
-    // }
-
+    public void updated(BoardDto boardDto) {
+        sql.update("Board.update", boardDto);
+    }
 }

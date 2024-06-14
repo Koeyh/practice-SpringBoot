@@ -30,7 +30,7 @@ public class BoardService {
         return boardRepository.findById(id);
     }
 
-    // public void deleteBoard(Long id) {
-    //     boardRepository.deleteBoard(id);
-    // }
+    public void update(BoardDto boardDto) {
+        boardRepository.updated(boardDto);
+    }
 }
