@@ -8,7 +8,8 @@
 - mybatis와 thymeleaf, javascript 사용과 숙달에 집중 할 것
 
 - 패키지별 개념 잡기
-|패키지명|용도|
+  
+|패키지명|역할|
 |:---:|:---|
 |Controller|View와 Service를 이어주는 역할|
 |Service|실질적인 로직을 실행하여 Model단으로 전달|
