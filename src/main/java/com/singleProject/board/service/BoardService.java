@@ -47,7 +47,9 @@ public class BoardService {
                 boardFileDto.setOriginalFileName(originalFilename);
                 boardFileDto.setStoredFileName(storedFilename);
                 boardFileDto.setBoardId(saveBoard.getId());
-                String savePath = "D:\\Source\\singleProject\\development\\Visual Studio Code\\spring_upload_files\\" + storedFilename;
+                // String savePath = "D:\\Source\\singleProject\\development\\Visual_Studio_Code\\spring_upload_files\\" + storedFilename;
+                String savePath = "D:/Source/singleProject/development/Visual_Studio_Code/spring_upload_files/" + storedFilename;
+
                 boardFile.transferTo(new File(savePath));
 
                 boardRepository.saveFile(boardFileDto);
