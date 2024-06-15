@@ -1,6 +1,7 @@
 package com.singleProject.board.controller;
 
 import com.singleProject.board.dto.BoardDto;
+import com.singleProject.board.dto.BoardFileDto;
 import com.singleProject.board.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.io.IOException;
 import java.util.List;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -47,6 +47,10 @@ public class BoardController {
         // 상세 내용 가져오기
         BoardDto boardDto = boardService.findById(id);
         model.addAttribute("board", boardDto);
+        if(boardDto.getFileAttached() == 1) {
+            BoardFileDto boardFileDto = boardService.findFile(id);
+            model.addAttribute("boardFile", boardFileDto);
+        }
         return "detail";
     }
     // 기존에 작성된 데이터 불러오기

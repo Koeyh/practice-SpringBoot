@@ -1,6 +1,8 @@
 package com.singleProject.board.repository;
 
 import com.singleProject.board.dto.BoardDto;
+import com.singleProject.board.dto.BoardFileDto;
+
 import lombok.RequiredArgsConstructor;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
@@ -36,5 +38,13 @@ public class BoardRepository {
 
     public void delete(Long id) {
         sql.delete("Board.delete", id);
+    }
+
+    public void saveFile(BoardFileDto boardFileDto) {
+        sql.insert("Board.saveFile", boardFileDto);
+    }
+
+    public BoardFileDto findFile(Long id) {
+        return sql.selectOne("Baord.findFile", id);
     }
 }
