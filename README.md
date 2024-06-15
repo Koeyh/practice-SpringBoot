@@ -12,6 +12,7 @@
 - IDE : IntelliJ => visual studio Code
 - Spring Boot 3.2.6 ver (3.3.0 ver은 MyBatis 지원 불가)
 - MySQL 사용
+- Build Tool : Gradle(8.8 ver)
 
 
 ### 패키지별 개념 잡기
