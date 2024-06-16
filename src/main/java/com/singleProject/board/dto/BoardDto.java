@@ -19,5 +19,6 @@ public class BoardDto {
     private int boardHits;
     private String createdAt;
     private int fileAttached;
+    // 멀티 파일을 받기 위해 List 타입 선언
     private List<MultipartFile> boardFile;
 }

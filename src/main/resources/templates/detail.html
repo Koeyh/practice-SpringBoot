@@ -42,9 +42,11 @@
     <tr th:if="${board.fileAttached == 1}">
         <th>image</th>
         <!-- upload는 WebConfig.java에서 지정한 경로를 따라가는것 -->
-        <td><img th:src="@{|/upload/${boardFile.storedFileName}|}" alt="" width="200" height="200"></td>
+         <!-- 타임리프 반복문을 사용하여 여러개의 첨부파일 접수 -->
+        <td th:each="boardFile: ${boardFileList}">
+            <img th:src="@{|/upload/${boardFile.storedFileName}|}" alt="" width="200" height="200">
+        </td>    
     </tr>
-
 </table>
 <button onclick="listReq()">목록</button>
 <button onclick="updateReq()">수정</button>

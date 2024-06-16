@@ -48,8 +48,12 @@ public class BoardController {
         BoardDto boardDto = boardService.findById(id);
         model.addAttribute("board", boardDto);
         if(boardDto.getFileAttached() == 1) {
-            BoardFileDto boardFileDto = boardService.findFile(id);
-            model.addAttribute("boardFile", boardFileDto);
+            // 단일 파일 첨부에서 다중 파일 첨부로 기능 추가 '24. 6. 16.
+            // BoardFileDto boardFileDto = boardService.findFile(id);
+            List<BoardFileDto> boardFileDtoList = boardService.findFile(id);
+            // model.addAttribute("boardFile", boardFileDto);
+            model.addAttribute("boardFileList", boardFileDtoList);
+
         }
         return "detail";
     }

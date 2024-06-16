@@ -34,7 +34,7 @@ public class BoardService {
             boardDto.setFileAttached(1);
             // boardFileDto의 setBoardId를 위해 받아옴
             BoardDto saveBoard = boardRepository.save(boardDto);
-
+            // 다중 파일 적용을 위해 반복문 사용
             for(MultipartFile boardFile : boardDto.getBoardFile()) {
                 // 사용자가 첨부한 파일 명
                 String originalFilename = boardFile.getOriginalFilename();
@@ -47,6 +47,7 @@ public class BoardService {
                 boardFileDto.setOriginalFileName(originalFilename);
                 boardFileDto.setStoredFileName(storedFilename);
                 boardFileDto.setBoardId(saveBoard.getId());
+                // 파일 시스템 경로 수정
                 // String savePath = "D:\\Source\\singleProject\\development\\Visual_Studio_Code\\spring_upload_files\\" + storedFilename;
                 String savePath = "D:/Source/singleProject/development/Visual_Studio_Code/spring_upload_files/" + storedFilename;
 
@@ -77,7 +78,8 @@ public class BoardService {
         boardRepository.delete(id);
     }
 
-    public BoardFileDto findFile(Long id) {
+    // return 타입 List로 변경
+    public List<BoardFileDto> findFile(Long id) {
         return boardRepository.findFile(id);
     }
 }
