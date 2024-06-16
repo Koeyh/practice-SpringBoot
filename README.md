@@ -5,6 +5,7 @@
   - JSP -> Thymeleaf
   - Oracle -> MySQL
 - CSS Style 요소는 최소한으로
+- 팀 프로젝트에서 이미지 등의 파일 첨부 기능을 직접 구현하지 못한 아쉬움이 남아 파일첨부 기능 추가를 목표로 진행
 - mybatis와 thymeleaf, javascript 사용과 숙달에 집중 할 것
 - 처음에는 개발환경을 IntelliJ IDEA로 설정하였으나, Spring Boot 자체는 Visual Studio Code가 더욱 편리하다 느껴 변경('24. 6. 15. 기준)
 
